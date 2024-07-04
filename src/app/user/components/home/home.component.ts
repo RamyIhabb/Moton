@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { UserApiService } from 'src/services/user-api.service';
 
@@ -8,33 +7,33 @@ import { UserApiService } from 'src/services/user-api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  GetBook: any[] = [];  // Initialize as an array
 
-  constructor(private _UserApiService: UserApiService,) { }
-
-  GetBook: any = {};
-
-
+  constructor(private _UserApiService: UserApiService) { }
 
   ngOnInit(): void {
-
     this._UserApiService.listBook().subscribe({
       next: (Response) => {
-        // console.log(Response.data.bookName);
-        if (Response && Response.data) {
+        if (Response && Array.isArray(Response.data)) {
           console.log(Response.data);
           this.GetBook = Response.data;
+          // if(Response.data.name==""){
+
+          // this.GetBook = Response.data;
+
+          // }else{
+          //   this.GetBook = Response.data;
+          // }
+
 
         } else {
-          console.log('Data not found in Response');
+          console.log('Data not found or not in expected format in Response');
         }
+      },
+      error: (error) => {
+        console.error('Error fetching data:', error);
       }
-    })
-    console.log("ramy");
+    });
+
   }
-
-
-
-
-
-
 }
