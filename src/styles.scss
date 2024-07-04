@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+$main-color: #ed553b;
+$text-secondry: #3d3c3c;
+$background-box: #e5e4e4;
+$text-main: #173f5f;
+$footer: #222222;
+$test: #5c5b5b;
+
+.main {
+    color: $main-color;
+}
+
+.text-main {
+    color: $text-main;
+}
+
+.text-light {
+    color: $text-secondry;
+    font-size: 12px;
+}
+
+.background-box {
+    background-color: $background-box;
+}
+
+
+.main-btn {
+    background-color: $main-color;
+    color: #fff;
+    cursor: pointer;
+    border: unset;
+    padding: 4px 8px;
+    border-radius: 5px;
+
+    &:disabled {
+        background-color: #0347036d;
+        color: #ffffff6b;
+        cursor: not-allowed;
+    }
+}
+
+
+.active-link {
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 5px;
+
+
+}
