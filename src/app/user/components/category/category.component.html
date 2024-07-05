@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mb-5">
+            <h3 class="text-center mb-4">Books in Arabic</h3>
+            <div class="row">
+                <div class="mb-3 col-md-3" *ngFor="let book of ArbicBooks">
+                    <div class="card shadow-sm rounded">
+                        <img [src]="book.image" class="card-img-top rounded-top" alt="">
+                        <div class="card-body rounded-bottom">
+                            <h5 class="card-title">{{ book.name }}</h5>
+                            <p class="card-text">{{ book.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الفاصل -->
+
+
+        <!-- الكتب باللغة الإنجليزية -->
+        <div class="col-md-10">
+            <h3 class="text-center mb-4">Books in English</h3>
+            <div class="row">
+                <div class="mb-3 col-md-3" *ngFor="let book of EnglishBooks">
+                    <div class="card shadow-sm rounded">
+                        <img [src]="book.image" class="card-img-top rounded-top" alt="">
+                        <div class="card-body rounded-bottom">
+                            <h5 class="card-title">{{ book.name }}</h5>
+                            <p class="card-text">{{ book.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
